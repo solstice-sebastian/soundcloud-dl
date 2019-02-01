@@ -1,0 +1,24 @@
+{
+  "name": "SoundCloud on the DL",
+  "version": "0.1",
+  "description": "SoundCloud track helper",
+  "permissions": [
+    "activeTab",
+    "webRequest",
+    "webRequestBlocking",
+    "downloads",
+    "*://*.soundcloud.com/*",
+    "*://cf-hls-media.sndcdn.com/media/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.soundcloud.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "manifest_version": 2
+}
